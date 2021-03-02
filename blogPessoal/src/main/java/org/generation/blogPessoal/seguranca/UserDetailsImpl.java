@@ -6,14 +6,12 @@ import org.generation.blogPessoal.model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javassist.SerialVersionUID;
-
 //aplicar uma regra de negocio da classe UserDetails
 // clicar em UserDetailsImpl para importar todos os metodos
 public class UserDetailsImpl implements UserDetails {
 
 	// dizer que classe é apenas para controle interno
-	private static final long SerialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private String userName;
 	private String password;
@@ -39,19 +37,19 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return password; //retornar o password
+		return password; // retornar o password
 	}
 
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return userName; //retornar o userName
+		return userName; // retornar o userName
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return true; //retornar true
+		return true; // retornar true
 	}
 
 	@Override

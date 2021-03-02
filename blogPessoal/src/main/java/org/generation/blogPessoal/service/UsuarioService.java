@@ -16,21 +16,21 @@ public class UsuarioService {
 
 	@Autowired
 	private UsuarioRepository repository;
-	private BCryptPasswordEncoder encoder;
+	
 
 	// criar um metodo
 
 	public Usuario CadastrarUsuario(Usuario usuario) {
-		BCryptPasswordEncoder enconder = new BCryptPasswordEncoder();
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-		String senhaEncoder = enconder.encode(usuario.getSenha());
+		String senhaEncoder = encoder.encode(usuario.getSenha());
 		usuario.setSenha(senhaEncoder);
 
 		return repository.save(usuario);
 	}
 
 	public Optional<UserLogin> Logar(Optional<UserLogin> user) {
-		BCryptPasswordEncoder enconder = new BCryptPasswordEncoder();
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Optional<Usuario> usuario = repository.findByUsuario(user.get().getUsuario());
 
 		if (usuario.isPresent()) {
