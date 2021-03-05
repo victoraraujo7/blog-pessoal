@@ -12,13 +12,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.ManyToAny;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 @Entity // indica essa classe vai ser uma entidade do jpa hibernate
-@Table(name = "postagem") // essa entidade no banco de dados irá virar uma tabela
+@Table(name = "tb_postagem") // essa entidade no banco de dados irá virar uma tabela
 public class Postagem {
 
 	// criar os atributos dessa classe =sql
